@@ -350,8 +350,7 @@ class _RequestConfig {
     this.headers = headers ?? {};
     this.extra = extra ?? {};
     this.contentType = contentType;
-    this.headers =
-        this.headers.map((key, v) => MapEntry(key.toLowerCase().toString(), v));
+    this.headers = this.headers.map((key, v) => MapEntry(key.toString(), v));
   }
 
   /// Http method.

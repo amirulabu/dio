@@ -350,17 +350,13 @@ class _RequestConfig {
     this.headers = headers ?? {};
     this.extra = extra ?? {};
     this.contentType = contentType;
-    this.headers =
-        this.headers.map((key, v) => MapEntry(key.toLowerCase().toString(), v));
+    this.headers = this.headers.map((key, v) => MapEntry(key.toString(), v));
   }
 
   /// Http method.
   String method;
 
-  /// Http request headers. The keys of initial headers will be converted to lowercase,
-  /// for example 'Content-Type' will be converted to 'content-type'.
-  ///
-  /// You should use lowercase as the key name when you need to set the request header.
+  /// Http request headers.
   Map<String, dynamic> headers;
 
   /// Timeout in milliseconds for sending data.
@@ -380,7 +376,7 @@ class _RequestConfig {
   /// you can set `ContentType.parse('application/x-www-form-urlencoded')`, and [Dio]
   /// will automatically encode the request body.
   set contentType(String contentType) {
-    headers[Headers.contentTypeHeader] = contentType?.toLowerCase()?.trim();
+    headers[Headers.contentTypeHeader] = contentType?.trim();
   }
 
   String get contentType => headers[Headers.contentTypeHeader];

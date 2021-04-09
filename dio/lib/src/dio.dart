@@ -993,7 +993,7 @@ abstract class DioMixin implements Dio {
             'Stream type must be `Stream<List>`, but ${data.runtimeType} is found.');
         stream = data;
         options.headers.keys.any((String key) {
-          if (key.toLowerCase() == Headers.contentLengthHeader) {
+          if (key == Headers.contentLengthHeader) {
             length = int.parse(options.headers[key].toString());
             return true;
           }
@@ -1032,7 +1032,8 @@ abstract class DioMixin implements Dio {
         options.headers[Headers.contentLengthHeader] = length.toString();
       }
       var complete = 0;
-      var byteStream = stream.transform<Uint8List>(StreamTransformer.fromHandlers(
+      var byteStream =
+          stream.transform<Uint8List>(StreamTransformer.fromHandlers(
         handleData: (data, sink) {
           if (options.cancelToken != null && options.cancelToken.isCancelled) {
             sink

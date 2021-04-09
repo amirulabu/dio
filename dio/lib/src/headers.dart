@@ -28,7 +28,7 @@ class Headers {
   /// Returns the list of values for the header named [name]. If there
   /// is no header with the provided name, [:null:] will be returned.
   List<String> operator [](String name) {
-    return _map[name.trim()];
+    return _map[name.trim().toLowerCase()];
   }
 
   /// Convenience method for the value for a single valued header. If

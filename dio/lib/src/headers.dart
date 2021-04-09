@@ -7,7 +7,7 @@ class Headers {
   static const acceptHeader = 'accept';
   static const contentEncodingHeader = 'content-encoding';
   static const contentLengthHeader = 'content-length';
-  static const contentTypeHeader = 'content-type';
+  static const contentTypeHeader = 'Content-Type';
   static const wwwAuthenticateHeader = 'www-authenticate';
 
   // Header field value

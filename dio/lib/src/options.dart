@@ -380,7 +380,7 @@ class _RequestConfig {
   /// you can set `ContentType.parse('application/x-www-form-urlencoded')`, and [Dio]
   /// will automatically encode the request body.
   set contentType(String contentType) {
-    headers[Headers.contentTypeHeader] = contentType?.toLowerCase()?.trim();
+    headers[Headers.contentTypeHeader] = contentType?.trim();
   }
 
   String get contentType => headers[Headers.contentTypeHeader];
